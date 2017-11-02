@@ -1,0 +1,20 @@
+# https://tech.yandex.ru/pdd/doc/concepts/termin-docpage/
+
+[Yandex]
+# Получите свой token на странице
+# https://pddimp.yandex.ru/api2/admin/get_token
+pdd-token: YOUR_TOKEN_HERE
+# По умолчанию задан текущий хост для pdd yandex api, не менять,
+# если не знаете, что делаете
+host: https://pddimp.yandex.ru
+
+[General]
+# Выбираем домен и поддомен для изменения IP адреса
+targetDomain: YOUR_DOMAIN_NAME
+targetSubdomain: YOUR_SUBDOMAIN_NAME
+# targetIP is a new IP address to be pushed to dns record.
+# It can be 'local' so then program resolves local ip address automatically
+#   targetIP: local
+# Or it can be any valid IP address
+#   targetIP: 192.168.0.1
+targetIP: local
