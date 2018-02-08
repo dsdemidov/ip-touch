@@ -1,2 +1,5 @@
 #!/bin/bash
-python ip-touch.py
+cd ~/projects/pdd
+source ./_ENV/bin/activate
+python ~/projects/pdd/ip-touch.py
+deactivate
