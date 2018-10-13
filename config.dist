@@ -15,6 +15,8 @@ targetSubdomain: YOUR_SUBDOMAIN_NAME
 # targetIP is a new IP address to be pushed to dns record.
 # It can be 'local' so then program resolves local ip address automatically
 #   targetIP: local
+# External IP
+#   targetIP: external
 # Or it can be any valid IP address
 #   targetIP: 192.168.0.1
 targetIP: local
