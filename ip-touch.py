@@ -15,20 +15,22 @@ def main():
         print(e)
         return False
 
+    app = YandexPdd()
+    if len(app.errors) > 0:
+        print(app.errors)
+        return False
+
     # Ищем локальный IP
     if targetIP == 'local':
         newIP = socket.gethostbyname(socket.gethostname())
+    elif targetIP == 'external':
+        newIP = app.getExternalIP()
     else:
         newIP = targetIP
     try:
         newIP = ip_address(newIP)
     except ValueError as e:
         print("Неверно указан IP адрес: ", e)
-        return False
-
-    app = YandexPdd()
-    if len(app.errors) > 0:
-        print(app.errors)
         return False
 
     app.getDomains()
@@ -49,4 +51,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-

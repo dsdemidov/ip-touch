@@ -27,6 +27,15 @@ class YandexPdd(metaclass=Singleton):
             self.errors.append(e)
             return None
 
+    def getExternalIP(self):
+        try:
+            request = requests.get('https://api.ipify.org?format=json')
+        except requests.exceptions.RequestException as e:
+            self.errors.append(e)
+            return False
+        response = request.json()
+        return response['ip']
+
     def searchDnsRecord(self, targetDomain, targetSubdomain):
         for i in range(len(self.domains)):
             # Ищем нужный домен
